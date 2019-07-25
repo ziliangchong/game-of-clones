@@ -33,11 +33,11 @@ Let's see if a machine can identify the purists among the wider fan community.
 - After experimenting with several models, we achieved 84.5% accuracy in predicting which subreddit a post came from using the `LogisticRegression`-`TfidfVectorizer` combination.
 - This model was chosen for its interpretability and we found that the model was intelligent enough to pick certain words that had high predictive power even though they are not the most common words in their subreddits.
 
-## Limitations
+### Limitations
 
 - Many of the posts, especially in `freefolk`, were memes and did not contain text in the post's body for analysis. We could rely only on the titles of the posts.
 
-## Further exploration
+### Further exploration
 
 - Move beyond the Reddit API, which allows just 1,000 posts, and collect larger datasets to see if that can improve performance.
 - Compare more Game of Thrones-related subreddits to see if results hold up across different fanbases.
