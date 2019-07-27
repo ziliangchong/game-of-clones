@@ -19,7 +19,7 @@ Let's see if a machine can identify the purists among the wider fan community.
 ## The process:
 - Data gathering from subreddits using Reddit API.
 - Data cleaning and exploration.
-  - Get rid of capitalization, punctuation, and stop words.
+  - Get rid of capitalization, punctuation, and stop words. Words were also lemmatized to remove differences between, say, "chapter" and "chapters".
   - Find most common words in each subreddit.
 - Modelling
   - Using loops, test every combination of selected vectorizers (`CountVectorizer`, `TfidfVectorizer`) and models (`MultiNomialNB`, `KNeighborsClassifier`, `RandomForestClassifier`, `LogisticRegression`).
@@ -30,15 +30,17 @@ Let's see if a machine can identify the purists among the wider fan community.
 
 ### Findings
 
-- After experimenting with several models, we achieved 84.5% accuracy in predicting which subreddit a post came from using the `LogisticRegression`-`TfidfVectorizer` combination.
+- After experimenting with several models, we achieved 83.3% accuracy in predicting which subreddit a post came from using the `LogisticRegression`-`TfidfVectorizer` combination.
 - This model was chosen for its interpretability and we found that the model was intelligent enough to pick certain words that had high predictive power even though they are not the most common words in their subreddits.
 
 ### Limitations
 
 - Many of the posts, especially in `freefolk`, were memes and did not contain text in the post's body for analysis. We could rely only on the titles of the posts.
+- The model had 45 false positives (freefolk wrongly classified as pureasoiaf) and 54 false negatives (pureasoiaf wrongly classified as freefolk). The higher number of false negatives than false positives is troubling as the consequences of false negatives are potentially greater. For example, if we were to advertise book or television content to the users based on predictions of which group they belong to, freefolk users will not have any issues receiving book content, but pureasoiaf users will be riled up receiving television content, which they have sworn off. They will also be afflicted by spoilers, as the television series' plot has gone beyond the books.x
 
 ### Further exploration
 
+- Explore more models which is more sensitive (has a better recall or true positive rate) as it is arguably more important to have sensitivity than precision in our case.
 - Move beyond the Reddit API, which allows just 1,000 posts, and collect larger datasets to see if that can improve performance.
 - Compare more Game of Thrones-related subreddits to see if results hold up across different fanbases.
 - Collect another 1,000 posts each from subreddits during a different time period to see if results differ. This is particularly the case for `freefolk`, which was very much influenced by the San Diego Comic Convention and Emmy Awards nomination during the time of data collection.
