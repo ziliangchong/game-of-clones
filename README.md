@@ -36,7 +36,7 @@ Let's see if a machine can identify the purists among the wider fan community.
 ### Limitations
 
 - Many of the posts, especially in `freefolk`, were memes and did not contain text in the post's body for analysis. We could rely only on the titles of the posts.
-- The model had 45 false positives (freefolk wrongly classified as pureasoiaf) and 54 false negatives (pureasoiaf wrongly classified as freefolk). The higher number of false negatives than false positives is troubling as the consequences of false negatives are potentially greater. For example, if we were to advertise book or television content to the users based on predictions of which group they belong to, freefolk users will not have any issues receiving book content, but pureasoiaf users will be riled up receiving television content, which they have sworn off. They will also be afflicted by spoilers, as the television series' plot has gone beyond the books.x
+- The model had 45 false positives (freefolk wrongly classified as pureasoiaf) and 54 false negatives (pureasoiaf wrongly classified as freefolk). The higher number of false negatives than false positives is troubling as the consequences of false negatives are potentially greater. For example, if we were to advertise book or television content to the users based on predictions of which group they belong to, freefolk users will not have any issues receiving book content, but pureasoiaf users will be riled up receiving television content, which they have sworn off. They will also be afflicted by spoilers, as the television series' plot has gone beyond the books.
 
 ### Further exploration
 
